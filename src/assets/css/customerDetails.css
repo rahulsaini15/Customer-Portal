@@ -1,0 +1,119 @@
+.app-container {
+  display: flex;
+  height: 90vh;
+  gap: 1rem;
+  padding: 0.5rem;
+  background-color: #fff;
+}
+
+.customer-list {
+  width: 30%;
+  overflow-y: auto;
+  height: 90vh;
+ 
+}
+
+.customer-card {
+  padding: 0.6rem;
+  border: 0.06rem solid #ccc;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin: 0.313rem;
+  background-color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.customer-card.selected {
+  background-color: #e0e0e0;
+}
+
+.customer-details {
+  width: 70%;
+  padding: 1.25rem;
+  background-color: #f8f6f6;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.5rem;
+}
+
+.customer-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+  overflow-y: auto;
+  flex: 1 1 auto;
+}
+
+.photo-grid-item {
+  width: 100%;
+  padding-top: 100%; 
+  position: relative; 
+}
+
+.photo-grid-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  
+}
+
+.spinner {
+  border: 0.25rem solid rgba(0, 0, 0, 0.1);
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  border-left-color: #09f;
+  animation: spin 1s linear infinite;
+  
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Shimmer effect */
+.shimmer {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #f0f0f0 0%, #e0e0e0 20%, #f0f0f0 40%, #f0f0f0 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 1rem;
+}
+
+
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
